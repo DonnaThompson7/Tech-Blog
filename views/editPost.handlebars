@@ -11,11 +11,11 @@
     <form class="form new-post-form">
       <div class="form-group">
         <label for="post-name">Title</label>
-        <input class="form-input" type="text" id="post-name" name="post-name" />
+        <input class="form-input" type="text" id="post-name" name="post-name" value="{{name}}"/>
       </div>
       <div class="form-group">
         <label for="post-desc">Content</label>
-        <textarea class="form-input" id="post-desc" name="post-desc"></textarea>
+        <textarea class="form-input" id="post-desc" name="post-desc">{{description}}</textarea>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary submit-button">Update Post</button>
