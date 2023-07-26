@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-auto">
+    <h2>Your Dashboard</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Edit Post:</h3>
+
+    <form class="form new-post-form">
+      <div class="form-group">
+        <label for="post-name">Title</label>
+        <input class="form-input" type="text" id="post-name" name="post-name" />
+      </div>
+      <div class="form-group">
+        <label for="post-desc">Content</label>
+        <textarea class="form-input" id="post-desc" name="post-desc"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary submit-button">Update Post</button>
+      </div>
+    </form>
+    <button type="submit" class="btn btn-primary delete-button">Delete Post</button>
+  </div>
+
+</div>
+
+<script src="../js/editPost.js"></script>

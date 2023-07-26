@@ -1,4 +1,4 @@
-header, .post:not(:last-child) {
+header {
   border-bottom: 1px solid #ccc;
 }
 
@@ -17,3 +17,14 @@ header, .post:not(:last-child) {
   text-decoration: underline;
 }
 
+.page-title {
+  border-style: solid;
+  border-color: black;
+  border-radius: 25px;
+  background-color: lightcyan;
+}
+
+.post {
+  border-style: solid;
+  border-color: black;
+}

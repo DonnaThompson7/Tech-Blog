@@ -9,24 +9,22 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
-<body>
+<body class="body">
   <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Tech Blog</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
+    <header class="flex-column justify-space-around p-5">
+      <nav class="display-flex align-start nav-bar">
+        <a href="/" class="p-4">Home</a>
+        <a href="/dashboard" class="p-4">Dashboard</a>
+        <!-- Conditionally render login link -->
         {{#if logged_in}}
-        <a href="/profile">Dashboard</a> |
-        <button class="no-button" id="logout">logout</button>
+
         {{else}}
-        <a href="/login">login</a>
+        <a href="/login" class="p-4">Login</a>
         {{/if}}
+        <button class="no-button p-4" id="logout" >Logout</button>
       </nav>
     </header>
-    <main class="container container-fluid mt-5">
+    <main class="p-4 container container-fluid align-start mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
