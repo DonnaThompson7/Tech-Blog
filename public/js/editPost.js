@@ -1,13 +1,15 @@
 
 const newFormHandler = async (event) => {
   event.preventDefault();
-
+  const postId = document.querySelector('#post-id').value;
+  console.log("post id is " + postId);
+  
   const name = document.querySelector('#post-name').value.trim();
   const description = document.querySelector('#post-desc').value.trim();
   console.log("post-name=" + name + " and post-desc=" + description);
   
   if (name && description) {
-    const response = await fetch(`/api/posts`, {
+    const response = await fetch(`/api/posts/${postId}`, {
       method: 'PUT',
       body: JSON.stringify({ name, description }),
       headers: {
@@ -24,10 +26,10 @@ const newFormHandler = async (event) => {
 };
 
 const delButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
+  const postId = document.querySelector('#post-id').value;
+  console.log("in delButtonHandler, post id is " + postId);
 
-    const response = await fetch(`/api/posts/${id}`, {
+    const response = await fetch(`/api/posts/${postId}`, {
       method: 'DELETE',
     });
 
@@ -36,7 +38,6 @@ const delButtonHandler = async (event) => {
     } else {
       alert('Failed to delete post');
     }
-  }
 };
 
 
@@ -45,7 +46,7 @@ document
   .addEventListener('click', delButtonHandler);
 
 document
-  .querySelector('.new-post-form')
+  .querySelector('.edit-post-form')
   .addEventListener('submit', newFormHandler);
 
   

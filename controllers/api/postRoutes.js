@@ -15,13 +15,20 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-router.put('/', withAuth, async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
   try {
-    const updatedPost = await Post.update({
-      ...req.body,
-      user_id: req.session.user_id,
-    });
+    console.log("inside put route, post id is " + req.params.id);
 
+    const updatedPost = await Post.update(
+      {
+      name: req.body.name,
+      description: req.body.description,
+      },
+      {
+      where: {
+        id: req.params.id,
+      },
+    });
     res.status(200).json(updatedPost);
   } catch (err) {
     res.status(400).json(err);
