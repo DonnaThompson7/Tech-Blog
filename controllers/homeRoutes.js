@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Post, User, Comments } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -27,15 +27,19 @@ router.get('/', async (req, res) => {
 
 router.get('/posts/:id', async (req, res) => {
   try {
+    console.log("in homeroutes, calling /posts/:id for id=" + req.params.id)
     const postData = await Post.findByPk(req.params.id, {
-      include: [
+       include: [
+        User,
         {
-          model: User,
-          attributes: ['name'],
+          model: Comments,
+          include: [User],
         },
-      ],
+     ],
     });
+    console.log(postData);
     const post = postData.get({ plain: true });
+    
     res.render('postDetails', {
       ...post,
       logged_in: req.session.logged_in
@@ -44,7 +48,6 @@ router.get('/posts/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
