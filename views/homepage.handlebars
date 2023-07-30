@@ -1,13 +1,14 @@
-<h1 class="page-title p-2">Tech Blog</h1>
-
+<div class="page-title-container">
+<h1 class="page-title p-2">The Tech Blog</h1>
+</div>
 <!-- Loop over each object in the posts array -->
 {{#each posts as |post| }}
-<div class="col-md-12 mb-4 post">
-  <div class="display-flex justify-space-between">
+<div class="post">
+  <div class="display-flex justify-space-between post-header">
     <h2>
       <a href="/posts/{{post.id}}">{{post.name}}</a>
     </h2>
-    <p>Created by {{post.user.name}} on {{format_date post.date_created}}</p>
+    <p class="post-byline">Created by {{post.user.name}} on {{format_date post.date_created}}</p>
   </div>
   <div >
     <p>

@@ -2,29 +2,84 @@ header {
   border-bottom: 1px solid #ccc;
 }
 
-.no-button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  color: #1b89bc;
-  text-decoration: none;
-  font-size: 100%;
+.body {
+  background-color: black;
 }
 
-.no-button:hover {
-  color: #065b83;
-  text-decoration: underline;
+.nav-bar {
+  color: white;
+}
+
+.container {
+  /* width: 85%; */
+  /* max-width: 1200px; */
+  background-color: lightcyan;
+  margin: 20px;
+  padding: 0px;
+}
+
+.container.container-fluid {
+  /* width: 92%; */
+}
+
+.page-title-container {
+  background-color: black;
+  margin: 0px;
+  padding: 30px;
 }
 
 .page-title {
-  border-style: solid;
-  border-color: black;
+  /* border-style: solid;
+  border-color: black; */
   border-radius: 25px;
   background-color: lightcyan;
+  width: 200px;
+  margin: 0px;
+  padding: 15px;
+  box-shadow: 7px 7px darkgray;
 }
 
 .post {
   border-style: solid;
   border-color: black;
+  border-width: 5px;
+  margin: 20px 20px 20px 20px;
+  padding: 0px;
 }
+
+.post-header {
+  background-color: black;
+  color: white;
+  margin: 0px;
+  padding: 10px 20px 10px 20px;
+}
+
+.post-header a {
+  color: white;
+  text-decoration: none;
+}
+
+.post-header a:hover {
+  color: yellow;
+  text-decoration: underline;
+}
+
+.post-byline {
+  padding-top: 5px;
+}
+.no-button {
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+  /* color: #1b89bc; */
+  text-decoration: none;
+  font-size: 100%;
+}
+
+.no-button:hover {
+  color: yellow;
+  text-decoration: underline;
+}
+

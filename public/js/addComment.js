@@ -4,8 +4,8 @@ const newFormHandler = async (event) => {
 
   const post_id = document.querySelector('#post-id').value;
   const content = document.querySelector('#comment-content').value.trim();
-  console.log("comment-content=" + commentContent + "for post-id=" + post_id);
-  if (commentContent) {
+  console.log("comment-content=" + content + "for post-id=" + post_id);
+  if (content) {
     const response = await fetch(`/api/comments`, {
       method: 'POST',
       body: JSON.stringify({ content, post_id }),
@@ -15,7 +15,7 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/homepage');
+      document.location.replace(`/posts/${post_id}`);
     } else {
       alert('Failed to create comment');
     }

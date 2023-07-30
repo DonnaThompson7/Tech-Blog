@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User, Comments } = require('../models');
+const { Post, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
@@ -45,11 +45,14 @@ router.get('/:id', withAuth, async (req, res) => {
   }
 });
 
-router.get('/addPost', withAuth, (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-    res.render('addPost', {
-      logged_in: req.session.logged_in      
-    })
-});
+// router.get('/addPost', withAuth, (req, res) => {
+//   console.log("calling addpost as user=" + req.session.user_id);
+//   // If the user is already logged in, redirect the request to another route
+//     res.render('addPost', {
+//       logged_in: req.session.logged_in      
+//     })
+
+// });
+
 
 module.exports = router;
