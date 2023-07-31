@@ -33,7 +33,7 @@ header {
   border-color: black; */
   border-radius: 25px;
   background-color: lightcyan;
-  width: 200px;
+  width: 300px;
   margin: 0px;
   padding: 15px;
   box-shadow: 7px 7px darkgray;
@@ -47,6 +47,14 @@ header {
   padding: 0px;
 }
 
+.comment-container {
+  border-style: solid;
+  border-color: black;
+  border-width: 30px 5px 5px 5px;
+  margin: 20px 20px 20px 20px;
+  padding: 5px 20px 5px 20px;
+
+}
 .post-header {
   background-color: black;
   color: white;
@@ -67,6 +75,26 @@ header {
 .post-byline {
   padding-top: 5px;
 }
+
+.descrip {
+  padding: 10px 20px 5px 20px;
+}
+
+.comment-list-title {
+  padding: 20px 0px 0px 20px;
+}
+
+.new-comment-form {
+  margin: 20px 20px 20px 20px;
+  padding: 5px 20px 5px 20px;
+}
+
+.add-post-button {
+  margin: 40px 20px 40px 30px;
+  background-color: darkblue;
+  color: white;
+}
+
 .no-button {
   background: none;
   border: none;

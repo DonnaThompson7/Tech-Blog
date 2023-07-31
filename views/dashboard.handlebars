@@ -1,19 +1,21 @@
+<div class="page-title-container">
 <h1 class="page-title p-2">Your Dashboard</h1>
+</div>
 
 <!-- Loop over each object in the posts array -->
 {{#each posts as |post| }}
-<div class="col-md-12 mb-4 post">
-  <div class="display-flex justify-space-between">
+<div class="post">
+  <div class="display-flex justify-space-between  post-header">
     <h2>
       <a href="/dashboard/{{post.id}}">{{post.name}}</a>
     </h2>
-    <p>{{format_date post.date_created}}</p>
+    <p class="post-byline">{{format_date post.date_created}}</p>
   </div>
   <div >
   </div>
 </div>
 {{/each}}
 
-<button class="add-post-button align-center "  >+ New Post</button></a>
+<a href="/dashboard/newPost" class="btn btn-primary add-post-button"><b>+ New Post</b></a>
 
 <script src="../js/dashboard.js"></script>

@@ -45,8 +45,15 @@ router.get('/:id', withAuth, async (req, res) => {
   }
 });
 
+router.get('/newPost', (req, res) => {
+  console.log("calling addpost as user=" + req.session.user_id);
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.render('addPost');
+  }
+  res.redirect('/login');
+});
 // router.get('/addPost', withAuth, (req, res) => {
-//   console.log("calling addpost as user=" + req.session.user_id);
 //   // If the user is already logged in, redirect the request to another route
 //     res.render('addPost', {
 //       logged_in: req.session.logged_in      
