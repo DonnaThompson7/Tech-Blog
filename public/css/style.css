@@ -84,7 +84,8 @@ header {
   padding: 20px 0px 0px 20px;
 }
 
-.new-comment-form {
+.new-comment-form,
+.edit-post-form {
   margin: 20px 20px 20px 20px;
   padding: 5px 20px 5px 20px;
 }
@@ -108,6 +109,24 @@ header {
 
 .no-button:hover {
   color: yellow;
+  text-decoration: underline;
+}
+
+.login-no-button,
+.signup-no-button {
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  color: darkblue;
+  /* color: #1b89bc; */
+  text-decoration: underline;
+  font-size: 100%;
+}
+
+.login-no-button:hover,
+.signup-no-button:hover {
+  color: blue;
   text-decoration: underline;
 }
 

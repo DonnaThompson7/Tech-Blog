@@ -67,4 +67,13 @@ router.get('/signup', (req, res) => {
   res.render('signup');
 });
 
+router.get('/newPost', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in=false) {
+    res.redirect('/login');
+    return;
+  }
+  res.render('addPost');
+});
+
 module.exports = router;

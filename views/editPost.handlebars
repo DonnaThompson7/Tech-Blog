@@ -1,11 +1,9 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Your Dashboard</h2>
-  </div>
+<div class="page-title-container">
+<h1 class="page-title p-2">Your Dashboard</h1>
 </div>
 
-<div class="row mt-4">
-  <div class="col-md-6">
+<div class="post">
+  <input type="hidden" name="post-id" id="post-id" value="{{id}}"/>
     <h3>Edit Post:</h3>
 
     <form class="form edit-post-form">
@@ -23,8 +21,6 @@
       </div>
     </form>
     <button class="btn btn-primary delete-button">Delete Post</button>
-  </div>
-
 </div>
 
 <script src="../js/editPost.js"></script>
