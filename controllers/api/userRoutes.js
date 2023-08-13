@@ -3,6 +3,15 @@ const { User } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
+    const userCheck = await User.findOne({ where: { name: req.body.name } });
+
+    if (userCheck) {
+      res
+        .status(400)
+        .json({ message: 'This user name already exists, please try again' });
+      return;
+    }
+
     const userData = await User.create(req.body);
 
     req.session.save(() => {
@@ -12,18 +21,21 @@ router.post('/', async (req, res) => {
       res.status(200).json(userData);
     });
   } catch (err) {
-    res.status(400).json(err);
+    // res.status(400).json(err);
+    res
+    .status(400)
+    .json({ message: 'Must enter valid name and password must be at least 8 characters. Please try again.' });
   }
 });
 
 router.post('/login', async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { email: req.body.email } });
+    const userData = await User.findOne({ where: { name: req.body.name } });
 
     if (!userData) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: 'Incorrect user name, please try again' });
       return;
     }
 
@@ -32,7 +44,7 @@ router.post('/login', async (req, res) => {
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: 'Incorrect password for this user name, please try again' });
       return;
     }
 

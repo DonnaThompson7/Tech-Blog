@@ -11,9 +11,7 @@
     <p class="post-byline">Created by {{post.user.name}} on {{format_date post.date_created}}</p>
   </div>
   <div class="descrip">
-    <p>
-      {{post.description}}
-    </p>
+    <p style="white-space: pre-wrap;">{{post.description}}</p>
   </div>
 </div>
 {{/each}}

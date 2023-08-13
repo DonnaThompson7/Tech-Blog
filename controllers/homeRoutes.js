@@ -25,9 +25,8 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/posts/:id', async (req, res) => {
+router.get('/posts/:id', withAuth, async (req, res) => {
   try {
-    console.log("in homeroutes, calling /posts/:id for id=" + req.params.id)
     const postData = await Post.findByPk(req.params.id, {
        include: [
         User,
@@ -69,11 +68,13 @@ router.get('/signup', (req, res) => {
 
 router.get('/newPost', (req, res) => {
   // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in=false) {
-    res.redirect('/login');
+  if (req.session.logged_in) {
+    console.log('in /newPost route');
+    res.render('addPost');
+    // res.redirect('/dashboard');
     return;
   }
-  res.render('addPost');
+  res.render('login');
 });
 
 module.exports = router;

@@ -45,5 +45,15 @@ router.get('/:id', withAuth, async (req, res) => {
   }
 });
 
+// router.get('/newPost', (req, res) => {
+//   // If the user is already logged in, redirect the request to another route
+//   if (req.session.logged_in) {
+//     console.log('in /newPost route');
+//     res.render('addPost');
+//     // res.redirect('/dashboard');
+//     return;
+//   }
+//   res.render('login');
+// });
 
 module.exports = router;

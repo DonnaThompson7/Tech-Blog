@@ -1,10 +1,10 @@
 
 const newFormHandler = async (event) => {
   event.preventDefault();
-
   const post_id = document.querySelector('#post-id').value;
   const content = document.querySelector('#comment-content').value.trim();
-  console.log("comment-content=" + content + "for post-id=" + post_id);
+  console.log("&&&&&&&&&&&&&&&&&&& hit submit: comment-content=" + content + "for post-id=" + post_id);
+
   if (content) {
     const response = await fetch(`/api/comments`, {
       method: 'POST',
